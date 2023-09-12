@@ -14,7 +14,7 @@ import json
 app = Flask(__name__)
 startTime = datetime.now()
 R_SERVER = redis.Redis(host=os.environ.get('REDIS_HOST', 'redis'), port=6379)
-db = MySQLdb.connect("mysql","root","password")
+db = MySQLdb.connect(host="mysql", user="root", password="password")
 cursor = db.cursor()
 
 @app.route('/init')
